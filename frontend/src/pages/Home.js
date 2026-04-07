@@ -345,8 +345,7 @@ export default function Home() {
                                 </p>
                                 <div className="pf-result-list">
                                     {results.map((job, i) => (
-                                        <ResultCard job={job} rank={i + 1} />
-                                    ))}
+                                        <ResultCard key={i} job={job} rank={i + 1} />))}
                                 </div>
                                 <button className="pf-btn-prev pf-btn-restart" onClick={restart}>
                                     ← Start over
