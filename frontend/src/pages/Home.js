@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../styles/app.css";
 import { getJobRecommendations } from "../api";
 import { ALL_SKILLS } from "../data/skills";
