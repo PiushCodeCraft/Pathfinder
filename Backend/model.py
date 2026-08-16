@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
@@ -9,12 +10,10 @@ from sklearn.preprocessing import StandardScaler
 # ===============================
 # LOAD DATA
 # ===============================
-df = pd.read_csv("../Dataset/job_dataset_modified.csv")
+BASE_DIR = Path(__file__).resolve().parent
+DATASET_PATH = BASE_DIR.parent / "Dataset" / "job_dataset_modified.csv"
 
-df['Combined_Skills'] = df['Combined_Skills'].fillna('')
-df['YearsOfExperience'] = df['YearsOfExperience'].fillna(0)
-
-
+df = pd.read_csv(DATASET_PATH)
 # ===============================
 # PARSE EXPERIENCE
 # ===============================
